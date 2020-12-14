@@ -7,5 +7,6 @@ from .script_lib import ultimale_gen_script
 
 
 def home(request):
+
     namelist = ultimale_gen_script.main("1",5,"M")
     return render(request, 'nameGenerator/home.html')

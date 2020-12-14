@@ -69,14 +69,16 @@ def from_existing(num,vocabulary):
     return namelist
 
 def fetch_names(vocabulary):
+
+    filename = os.getcwd() + "/nameGenerator/script_lib"
     
     #Dataset from vocabulary selection
     if vocabulary == 'M':
-        filename ='m_names.csv'
+        filename += '/m_names.csv'
     elif vocabulary == 'F':
-    	filename ='f_names.csv'
+    	filename += '/f_names.csv'
     elif vocabulary == 'B':
-        filename = 'c_names.csv'
+        filename += '/c_names.csv'
 
 
     #Open csv file
