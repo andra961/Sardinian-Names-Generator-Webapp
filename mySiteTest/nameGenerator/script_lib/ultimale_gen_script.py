@@ -63,9 +63,10 @@ def from_existing(num,vocabulary):
     #print('<><><><><><><><><><><><><><><><><><>')
 
     #Open csv file
-    namelist = fetch_names(vocabulary)
-    print(random.sample(namelist,num))
+    names = fetch_names(vocabulary)
+    namelist=random.sample(names,num)
     #print('<><><><><><><><><><><><><><><><><><>')
+    return namelist
 
 def fetch_names(vocabulary):
     
@@ -109,18 +110,21 @@ def markov_generation(num,vocabulary):
     for i in range(num):
     	markov_names.append(generate(chain))
     
-    for m in markov_names:
-    	print('·'+m)
+    #for m in markov_names:
+    #	print('·'+m)
     #print('<><><><><><><><><><><><><><><><><><>')
+    return markov_names
 
 def main(fun,num,vocabulary):
     #print('Benvenuto in SARDINIAN NAME GENERATOR!\n')
+    namelist = []
     if fun == '1':
-        from_existing(num,vocabulary)
+        namelist = from_existing(num,vocabulary)
     elif fun == '2':
-        markov_generation(num,vocabulary)
+        namelist = markov_generation(num,vocabulary)
     else:
         print('Arigato gozaimashita, weeb')
+    return namelist
 
 #####
 #MARKOV MODEL RESOURCES
