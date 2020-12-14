@@ -21,30 +21,34 @@
         <div class="columns">
             <div class="col col-small">
                 <h2>Settings: </h2>
-                <form>
-                <p class="subtitle">Numero nomi da estrarre: </p>
-                <input type="number" id="quantity" name="quantity" min="1" max="50">
-                <br><br><br>
-                <p class="subtitle">Vocabolario: </p>
+                <form action="/" method="post">
+                    {% csrf_token %}
+                    <p class="subtitle">Numero nomi da estrarre: <input type="number" id="quantity" name="quantity" min="1" max="50"></p>
 
-                    <input type="radio" id="male" name="vocabolario" value="male">
+                    <br><br><br>
+                    <p class="subtitle">Vocabolario: </p>
+
+                    <input type="radio" id="male" name="vocabolario" value="M">
                     <label for="male">Sardinian Male</label><br>
-                    <input type="radio" id="female" name="vocabolario" value="female">
+                    <input type="radio" id="female" name="vocabolario" value="F">
                     <label for="female">Sardinian Female</label><br>
-                    <input type="radio" id="other" name="vocabolario" value="other">
-                    <label for="other">Sardinian Small Village</label><br>
+                    <input type="radio" id="village" name="vocabolario" value="B">
+                    <label for="village">Sardinian Small Village</label><br>
                     <br><br>
-                    <input type="radio" id="other" name="vocabolario" value="other">
-                    <label for="other">Estrazione</label>
-                    <input type="radio" id="other" name="vocabolario" value="other">
-                    <label for="other">Generazione Markov</label>
+                    <input type="radio" id="extraction" name="operation" value="1">
+                    <label for="extraction">Estrazione</label>
+                    <input type="radio" id="generation" name="operation" value="2">
+                    <label for="generation">Generazione Markov</label>
                     <br><br>
                     <input type="submit" value="G E N E R A R E">
                   </form>
             </div>
             <div class="col col-big">
-                <h2>Generated Names:</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h2>Generated Names:</h2>
+                <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+                {% for name in names %}
+                    <p>{{ name }}</p>
+                {% endfor %}
             </div>
         </div>     
     </div>
