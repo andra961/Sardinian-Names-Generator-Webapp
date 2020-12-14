@@ -1,4 +1,57 @@
 <!DOCTYPE html>
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'nameGenerator/home.css' %}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width"=device-width, initial-scale=1">
+    <title>Sardinian Name Generator</title>
+</head>
+<header>
+    <h1 class="title">Sardinian Name Generator</h1>
+    <h2 class="subtitle">The first. Ever. Created.</h2>
+    <h3 class="sub-subtitle">(As far as i know)</h3>
+</header>
+
+
+<body>
+    <img src="{% static 'nameGenerator/280px-Flag_of_Sardinia.png' %}">
+
+    <div class="container">
+        <div class="columns">
+            <div class="col col-small">
+                <h2>Settings: </h2>
+                <form>
+                <p class="subtitle">Numero nomi da estrarre: </p>
+                <input type="number" id="quantity" name="quantity" min="1" max="50">
+                <br><br><br>
+                <p class="subtitle">Vocabolario: </p>
+                
+                    <input type="radio" id="male" name="vocabolario" value="male">
+                    <label for="male">Sardinian Male</label><br>
+                    <input type="radio" id="female" name="vocabolario" value="female">
+                    <label for="female">Sardinian Female</label><br>
+                    <input type="radio" id="other" name="vocabolario" value="other">
+                    <label for="other">Sardinian Small Village</label><br>
+                    <br><br>
+                    <input type="radio" id="other" name="vocabolario" value="other">
+                    <label for="other">Estrazione</label>
+                    <input type="radio" id="other" name="vocabolario" value="other">
+                    <label for="other">Generazione Markov</label>
+                    <br><br>
+                    <input type="submit" value="G E N E R A R E">
+                  </form>
+            </div>
+            <div class="col col-big">
+                <h2>Generated Names:</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>     
+    </div>
+    
+</body>
+=======
+<!DOCTYPE html>
 
 {% load static %}
 
